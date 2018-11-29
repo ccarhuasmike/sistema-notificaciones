@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+/* @import "assets/css/jquery-ui.min.css"; */
+@import "assets/css/bootstrap.min.css";
+@import "assets/css/bootstrap-cerulean.min.css";
+@import "assets/css/font-awesome.min.css";
+/* @import "assets/css/charisma-app.css"; */
+@import "assets/css/portal.css";
+/* @import "assets/css/colorbox.css"; */
+/* @import "assets/css/jquery.iphone.toggle.css"; */
+/* @import "assets/css/chosen.min.css"; */
+@import "assets/css/dataTables.bootstrap.min.css";
+@import "assets/css/select.dataTables.min.css";
+@import "assets/css/select2.min.css";
+@import "assets/css/bootstrap-datepicker.min.css";
+@import "assets/css/uploadfile.css";
+@import "assets/css/Site.css";
