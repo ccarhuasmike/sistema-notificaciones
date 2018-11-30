@@ -1,0 +1,958 @@
+<div id="content" class="col-sm-12 col-lg-12">
+    <style>
+        label.file-upload{position:relative;overflow:hidden}label.file-upload input[type=file]{position:absolute;top:0;right:0;min-width:100%;min-height:100%;font-size:100px;text-align:right;filter:alpha(opacity=0);opacity:0;outline:0;background:#fff;cursor:inherit;display:block}
+    </style>
+    <div id="modal-bandeja" class="container-fluid" style="margin-right: 15px;">
+        <h4><i class="glyphicon glyphicon-cog"></i> Actividades</h4>
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="">
+                <h2><i class="glyphicon glyphicon-list"></i> Búsqueda de Actividades</h2>
+            </div>
+            <div class="box-content">
+                <form id="formConsultaConvenios">
+                    <div class="row container-fluid">
+                        <div class="col-md-2 col-sm-12">
+
+                            <div class="form-group pull-right">
+
+                                <label for="cmbestado">Gestión</label>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-12">
+                            <div class="form-group">
+
+                                <select class="form-control select2 input-sm select2-hidden-accessible" style="width:100%;"
+                                    id="cmbGestion" tabindex="-1" aria-hidden="true">
+                                    <option value="-1">TODOS</option>
+                                    <option value="1">ADMINISTRATIVA</option>
+                                    <option value="2">FISCALIZADORA</option>
+                                    <option value="3">EDUCACION</option>
+                                    <option value="4">JURISIDICCIONAL</option>
+                                </select><span class="select2 select2-container select2-container--default" dir="ltr"
+                                    style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single"
+                                            role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0"
+                                            aria-labelledby="select2-cmbGestion-container"><span class="select2-selection__rendered"
+                                                id="select2-cmbGestion-container" title="TODOS"><span class="select2-selection__clear">×</span>TODOS</span><span
+                                                class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span
+                                        class="dropdown-wrapper" aria-hidden="true"></span></span>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-12">
+
+                            <div class="form-group pull-right">
+
+                                <label for="cmbestado">Estado</label>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-12">
+
+                            <div class="form-group">
+
+                                <select class="form-control select2 input-sm select2-hidden-accessible" style="width:100%;"
+                                    id="cmbEstado" tabindex="-1" aria-hidden="true">
+                                    <option value="-1">TODOS</option>
+                                    <option value="1">EN PROCESO</option>
+                                    <option value="2">CONCLUIDO</option>
+                                    <option value="3">EXPIRADO</option>
+                                </select><span class="select2 select2-container select2-container--default" dir="ltr"
+                                    style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single"
+                                            role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0"
+                                            aria-labelledby="select2-cmbEstado-container"><span class="select2-selection__rendered"
+                                                id="select2-cmbEstado-container" title="TODOS"><span class="select2-selection__clear">×</span>TODOS</span><span
+                                                class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span
+                                        class="dropdown-wrapper" aria-hidden="true"></span></span>
+                            </div>
+                        </div>
+                        <div class="col-md-1 col-sm-12">
+                            <div class="form-group">
+
+                                <div>
+                                    <button class="btn btn-primary btn-sm" type="button" id="btnBuscar">Buscar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+                <div class="table-responsive">
+                    <div id="tablaActividad_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                        <div class="row">
+                            <div class="col-sm-6"></div>
+                            <div class="col-sm-6">
+                                <div id="tablaActividad_filter" class="dataTables_filter"><label>Buscar:<input type="search"
+                                            class="form-control input-sm" placeholder="" aria-controls="tablaActividad"></label></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <table id="tablaActividad" class="table table-hover table-condensed table-striped table-bordered dataTable no-footer"
+                                    width="100%" role="grid" aria-describedby="tablaActividad_info" style="width: 100%;">
+                                    <thead>
+                                        <tr role="row">
+                                            <th width="60%" class="sorting_disabled" rowspan="1" colspan="1" style="width: 1033px;">Actividad</th>
+                                            <th width="8%" class="sorting_disabled" rowspan="1" colspan="1" style="width: 116px;">Fecha<br>Inicio</th>
+                                            <th width="8%" class="sorting_disabled" rowspan="1" colspan="1" style="width: 116px;">Fecha<br>Vencimiento</th>
+                                            <th width="8%" class="sorting_disabled" rowspan="1" colspan="1" style="width: 116px;">%Avance<br>De
+                                                Ejecucion </th>
+                                            <th width="8%" class="sorting_disabled" rowspan="1" colspan="1" style="width: 114px;">Estado</th>
+                                            <th width="8%" class="sorting_disabled" rowspan="1" colspan="1" style="width: 115px;">Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr role="row" class="odd">
+                                            <td>SUPERVISIÓN Y MONITOREO DE LA FISCALIZACIÓN ELECTORAL (DÁDIVAS,
+                                                PROPAGANDA ELECTORAL, PUBLICIDAD ESTATAL, NEUTRALIDAD DE
+                                                FUNCIONARIOS Y SERVIDORES PÚBLICOS, ENCUESTAS, GARANTÍAS,
+                                                ORGANIZACIÓN DEL PROCESO Y OTROS).</td>
+                                            <td>01/01/2018</td>
+                                            <td>07/10/2018</td>
+                                            <td>0%</td>
+                                            <td><span class="label label-sm label-danger">EXPIRADO</span></td>
+                                            <td>
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><span><a class="btn btn-default btn-xs" title="Visualizar"
+                                                                        href="javascript:bandejaActividades.verCorte({&quot;IDGESTION&quot;:2,&quot;IDACTIVIDAD&quot;:15,&quot;TXACTIVIDAD&quot;:&quot;SUPERVISIÓN Y MONITOREO DE LA FISCALIZACIÓN ELECTORAL (DÁDIVAS, PROPAGANDA ELECTORAL, PUBLICIDAD ESTATAL, NEUTRALIDAD DE FUNCIONARIOS Y SERVIDORES PÚBLICOS, ENCUESTAS, GARANTÍAS, ORGANIZACIÓN DEL PROCESO Y OTROS).&quot;,&quot;IDPROCESO&quot;:84,&quot;FECHAINICIO&quot;:&quot;01/01/2018&quot;,&quot;FECHAFINAL&quot;:&quot;07/10/2018&quot;,&quot;FGACTIVO&quot;:1,&quot;FGESTADO&quot;:3,&quot;PORCENTAJE&quot;:0,&quot;IDTIPO&quot;:3,&quot;ESTADO&quot;:&quot;EXPIRADO&quot;})"><i
+                                                                            class="glyphicon glyphicon-eye-open"
+                                                                            aria-hidden="true"></i></a></span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr role="row" class="even">
+                                            <td>NOTIFICAR RESOLUCIONES APROBADAS.</td>
+                                            <td>01/01/2018</td>
+                                            <td>28/02/2018</td>
+                                            <td>0%</td>
+                                            <td><span class="label label-sm label-danger">EXPIRADO</span></td>
+                                            <td>
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><span><a class="btn btn-default btn-xs" title="Editar"
+                                                                        href="javascript:bandejaActividades.popupCorte({&quot;IDGESTION&quot;:4,&quot;IDACTIVIDAD&quot;:63,&quot;TXACTIVIDAD&quot;:&quot;NOTIFICAR RESOLUCIONES APROBADAS.&quot;,&quot;IDPROCESO&quot;:84,&quot;FECHAINICIO&quot;:&quot;01/01/2018&quot;,&quot;FECHAFINAL&quot;:&quot;28/02/2018&quot;,&quot;FGACTIVO&quot;:1,&quot;FGESTADO&quot;:3,&quot;PORCENTAJE&quot;:0,&quot;IDTIPO&quot;:1,&quot;ESTADO&quot;:&quot;EXPIRADO&quot;})"><i
+                                                                            class="fa fa-pencil-square-o" aria-hidden="true"></i></a></span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr role="row" class="odd">
+                                            <td>ACONDICIONAR, IMPLEMENTAR Y MANTENER LAS SEDES DEL JNE Y DE LOS
+                                                JEE.</td>
+                                            <td>01/01/2018</td>
+                                            <td>31/10/2018</td>
+                                            <td>0%</td>
+                                            <td><span class="label label-sm label-danger">EXPIRADO</span></td>
+                                            <td>
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><span><a class="btn btn-default btn-xs" title="Editar"
+                                                                        href="javascript:bandejaActividades.popupCorte({&quot;IDGESTION&quot;:1,&quot;IDACTIVIDAD&quot;:14,&quot;TXACTIVIDAD&quot;:&quot;ACONDICIONAR, IMPLEMENTAR Y MANTENER LAS SEDES DEL JNE Y DE LOS JEE.&quot;,&quot;IDPROCESO&quot;:84,&quot;FECHAINICIO&quot;:&quot;01/01/2018&quot;,&quot;FECHAFINAL&quot;:&quot;31/10/2018&quot;,&quot;FGACTIVO&quot;:1,&quot;FGESTADO&quot;:3,&quot;PORCENTAJE&quot;:0,&quot;IDTIPO&quot;:2,&quot;ESTADO&quot;:&quot;EXPIRADO&quot;})"><i
+                                                                            class="fa fa-pencil-square-o" aria-hidden="true"></i></a></span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr role="row" class="even">
+                                            <td>PUBLICAR RESOLUCIÓN CON LA DEFINICIÓN DE LAS CIRCUNSCRIPCIONES
+                                                ADMINISTRATIVAS ELECTORALES.</td>
+                                            <td>01/02/2018</td>
+                                            <td>28/02/2018</td>
+                                            <td>0%</td>
+                                            <td><span class="label label-sm label-danger">EXPIRADO</span></td>
+                                            <td>
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><span><a class="btn btn-default btn-xs" title="Editar"
+                                                                        href="javascript:bandejaActividades.popupCorte({&quot;IDGESTION&quot;:4,&quot;IDACTIVIDAD&quot;:62,&quot;TXACTIVIDAD&quot;:&quot;PUBLICAR RESOLUCIÓN CON LA DEFINICIÓN DE LAS CIRCUNSCRIPCIONES ADMINISTRATIVAS ELECTORALES.&quot;,&quot;IDPROCESO&quot;:84,&quot;FECHAINICIO&quot;:&quot;01/02/2018&quot;,&quot;FECHAFINAL&quot;:&quot;28/02/2018&quot;,&quot;FGACTIVO&quot;:1,&quot;FGESTADO&quot;:3,&quot;PORCENTAJE&quot;:0,&quot;IDTIPO&quot;:1,&quot;ESTADO&quot;:&quot;EXPIRADO&quot;})"><i
+                                                                            class="fa fa-pencil-square-o" aria-hidden="true"></i></a></span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr role="row" class="odd">
+                                            <td>ELABORACIÓN DE DOCUMENTACIÓN (PROYECTOS DE REMESAS Y/O
+                                                RESOLUCIONES) A FIN DE ASIGNAR LOS RECURSOS NECESARIO A LOS
+                                                JEE.</td>
+                                            <td>01/02/2018</td>
+                                            <td>31/10/2018</td>
+                                            <td>0%</td>
+                                            <td><span class="label label-sm label-danger">EXPIRADO</span></td>
+                                            <td>
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><span><a class="btn btn-default btn-xs" title="Editar"
+                                                                        href="javascript:bandejaActividades.popupCorte({&quot;IDGESTION&quot;:1,&quot;IDACTIVIDAD&quot;:5,&quot;TXACTIVIDAD&quot;:&quot;ELABORACIÓN DE DOCUMENTACIÓN (PROYECTOS DE REMESAS Y/O RESOLUCIONES) A FIN DE ASIGNAR LOS RECURSOS NECESARIO A LOS JEE.&quot;,&quot;IDPROCESO&quot;:84,&quot;FECHAINICIO&quot;:&quot;01/02/2018&quot;,&quot;FECHAFINAL&quot;:&quot;31/10/2018&quot;,&quot;FGACTIVO&quot;:1,&quot;FGESTADO&quot;:3,&quot;PORCENTAJE&quot;:0,&quot;IDTIPO&quot;:2,&quot;ESTADO&quot;:&quot;EXPIRADO&quot;})"><i
+                                                                            class="fa fa-pencil-square-o" aria-hidden="true"></i></a></span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr role="row" class="even">
+                                            <td>NOTIFICAR Y PUBLICAR RESOLUCIÓN.</td>
+                                            <td>01/03/2018</td>
+                                            <td>31/03/2018</td>
+                                            <td>0%</td>
+                                            <td><span class="label label-sm label-danger">EXPIRADO</span></td>
+                                            <td>
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><span><a class="btn btn-default btn-xs" title="Editar"
+                                                                        href="javascript:bandejaActividades.popupCorte({&quot;IDGESTION&quot;:4,&quot;IDACTIVIDAD&quot;:66,&quot;TXACTIVIDAD&quot;:&quot;NOTIFICAR Y PUBLICAR RESOLUCIÓN.&quot;,&quot;IDPROCESO&quot;:84,&quot;FECHAINICIO&quot;:&quot;01/03/2018&quot;,&quot;FECHAFINAL&quot;:&quot;31/03/2018&quot;,&quot;FGACTIVO&quot;:1,&quot;FGESTADO&quot;:3,&quot;PORCENTAJE&quot;:0,&quot;IDTIPO&quot;:1,&quot;ESTADO&quot;:&quot;EXPIRADO&quot;})"><i
+                                                                            class="fa fa-pencil-square-o" aria-hidden="true"></i></a></span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr role="row" class="odd">
+                                            <td>EQUIPAMIENTO (MOBILIARIO Y EQUIPOS) PARA EL FUNCIONAMIENTO DE
+                                                LOS JEE.</td>
+                                            <td>01/04/2018</td>
+                                            <td>31/05/2018</td>
+                                            <td>0%</td>
+                                            <td><span class="label label-sm label-danger">EXPIRADO</span></td>
+                                            <td>
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><span><a class="btn btn-default btn-xs" title="Editar"
+                                                                        href="javascript:bandejaActividades.popupCorte({&quot;IDGESTION&quot;:1,&quot;IDACTIVIDAD&quot;:3,&quot;TXACTIVIDAD&quot;:&quot;EQUIPAMIENTO (MOBILIARIO Y EQUIPOS) PARA EL FUNCIONAMIENTO DE LOS JEE.&quot;,&quot;IDPROCESO&quot;:84,&quot;FECHAINICIO&quot;:&quot;01/04/2018&quot;,&quot;FECHAFINAL&quot;:&quot;31/05/2018&quot;,&quot;FGACTIVO&quot;:1,&quot;FGESTADO&quot;:3,&quot;PORCENTAJE&quot;:0,&quot;IDTIPO&quot;:2,&quot;ESTADO&quot;:&quot;EXPIRADO&quot;})"><i
+                                                                            class="fa fa-pencil-square-o" aria-hidden="true"></i></a></span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr role="row" class="even">
+                                            <td>GESTIÓN DE ALQUILERES DE LOCALES PARA SER SEDE DE JEE.</td>
+                                            <td>01/04/2018</td>
+                                            <td>31/05/2018</td>
+                                            <td>0%</td>
+                                            <td><span class="label label-sm label-danger">EXPIRADO</span></td>
+                                            <td>
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><span><a class="btn btn-default btn-xs" title="Editar"
+                                                                        href="javascript:bandejaActividades.popupCorte({&quot;IDGESTION&quot;:1,&quot;IDACTIVIDAD&quot;:1,&quot;TXACTIVIDAD&quot;:&quot;GESTIÓN DE ALQUILERES DE LOCALES PARA SER SEDE DE JEE.&quot;,&quot;IDPROCESO&quot;:84,&quot;FECHAINICIO&quot;:&quot;01/04/2018&quot;,&quot;FECHAFINAL&quot;:&quot;31/05/2018&quot;,&quot;FGACTIVO&quot;:1,&quot;FGESTADO&quot;:3,&quot;PORCENTAJE&quot;:0,&quot;IDTIPO&quot;:1,&quot;ESTADO&quot;:&quot;EXPIRADO&quot;})"><i
+                                                                            class="fa fa-pencil-square-o" aria-hidden="true"></i></a></span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr role="row" class="odd">
+                                            <td>GESTIÓN DE HABILITACIÓN DE LOS LOCALES DEL JEE.</td>
+                                            <td>01/04/2018</td>
+                                            <td>31/05/2018</td>
+                                            <td>0%</td>
+                                            <td><span class="label label-sm label-danger">EXPIRADO</span></td>
+                                            <td>
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><span><a class="btn btn-default btn-xs" title="Editar"
+                                                                        href="javascript:bandejaActividades.popupCorte({&quot;IDGESTION&quot;:1,&quot;IDACTIVIDAD&quot;:2,&quot;TXACTIVIDAD&quot;:&quot;GESTIÓN DE HABILITACIÓN DE LOS LOCALES DEL JEE.&quot;,&quot;IDPROCESO&quot;:84,&quot;FECHAINICIO&quot;:&quot;01/04/2018&quot;,&quot;FECHAFINAL&quot;:&quot;31/05/2018&quot;,&quot;FGACTIVO&quot;:1,&quot;FGESTADO&quot;:3,&quot;PORCENTAJE&quot;:0,&quot;IDTIPO&quot;:1,&quot;ESTADO&quot;:&quot;EXPIRADO&quot;})"><i
+                                                                            class="fa fa-pencil-square-o" aria-hidden="true"></i></a></span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr role="row" class="even">
+                                            <td>GESTIONAR LA ASIGNACIÓN DE ENCARGOS INTERNOS PARA LA
+                                                HABILITACIÓN DE LOS LOCALES SEDES DE LOS JEE.</td>
+                                            <td>01/04/2018</td>
+                                            <td>31/05/2018</td>
+                                            <td>0%</td>
+                                            <td><span class="label label-sm label-danger">EXPIRADO</span></td>
+                                            <td>
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><span><a class="btn btn-default btn-xs" title="Editar"
+                                                                        href="javascript:bandejaActividades.popupCorte({&quot;IDGESTION&quot;:1,&quot;IDACTIVIDAD&quot;:4,&quot;TXACTIVIDAD&quot;:&quot;GESTIONAR LA ASIGNACIÓN DE ENCARGOS INTERNOS PARA LA HABILITACIÓN DE LOS LOCALES SEDES DE LOS JEE.&quot;,&quot;IDPROCESO&quot;:84,&quot;FECHAINICIO&quot;:&quot;01/04/2018&quot;,&quot;FECHAFINAL&quot;:&quot;31/05/2018&quot;,&quot;FGACTIVO&quot;:1,&quot;FGESTADO&quot;:3,&quot;PORCENTAJE&quot;:0,&quot;IDTIPO&quot;:2,&quot;ESTADO&quot;:&quot;EXPIRADO&quot;})"><i
+                                                                            class="fa fa-pencil-square-o" aria-hidden="true"></i></a></span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr role="row" class="odd">
+                                            <td>PUBLICACIÓN Y NOTIFICACIÓN DE LA RESOLUCIÓN DE CONFORMACIÓN
+                                                DEFINITIVA DE LOS JEE.</td>
+                                            <td>01/04/2018</td>
+                                            <td>31/05/2018</td>
+                                            <td>0%</td>
+                                            <td><span class="label label-sm label-danger">EXPIRADO</span></td>
+                                            <td>
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><span><a class="btn btn-default btn-xs" title="Editar"
+                                                                        href="javascript:bandejaActividades.popupCorte({&quot;IDGESTION&quot;:4,&quot;IDACTIVIDAD&quot;:64,&quot;TXACTIVIDAD&quot;:&quot;PUBLICACIÓN Y NOTIFICACIÓN DE LA RESOLUCIÓN DE CONFORMACIÓN DEFINITIVA DE LOS JEE.&quot;,&quot;IDPROCESO&quot;:84,&quot;FECHAINICIO&quot;:&quot;01/04/2018&quot;,&quot;FECHAFINAL&quot;:&quot;31/05/2018&quot;,&quot;FGACTIVO&quot;:1,&quot;FGESTADO&quot;:3,&quot;PORCENTAJE&quot;:0,&quot;IDTIPO&quot;:1,&quot;ESTADO&quot;:&quot;EXPIRADO&quot;})"><i
+                                                                            class="fa fa-pencil-square-o" aria-hidden="true"></i></a></span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr role="row" class="even">
+                                            <td>ACTUALIZAR LA BASE DE DATOS DEL DIRECTORIO DE CONFORMACIÓN DE
+                                                LOS JEE.</td>
+                                            <td>01/05/2018</td>
+                                            <td>07/10/2018</td>
+                                            <td>0%</td>
+                                            <td><span class="label label-sm label-danger">EXPIRADO</span></td>
+                                            <td>
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><span><a class="btn btn-default btn-xs" title="Visualizar"
+                                                                        href="javascript:bandejaActividades.verCorte({&quot;IDGESTION&quot;:4,&quot;IDACTIVIDAD&quot;:65,&quot;TXACTIVIDAD&quot;:&quot;ACTUALIZAR LA BASE DE DATOS DEL DIRECTORIO DE CONFORMACIÓN DE LOS JEE.&quot;,&quot;IDPROCESO&quot;:84,&quot;FECHAINICIO&quot;:&quot;01/05/2018&quot;,&quot;FECHAFINAL&quot;:&quot;07/10/2018&quot;,&quot;FGACTIVO&quot;:1,&quot;FGESTADO&quot;:3,&quot;PORCENTAJE&quot;:0,&quot;IDTIPO&quot;:3,&quot;ESTADO&quot;:&quot;EXPIRADO&quot;})"><i
+                                                                            class="glyphicon glyphicon-eye-open"
+                                                                            aria-hidden="true"></i></a></span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr role="row" class="odd">
+                                            <td>DESPLIEGUE DE COORDINADORES DE ACCIONES EDUCATIVAS</td>
+                                            <td>01/05/2018</td>
+                                            <td>07/10/2018</td>
+                                            <td>0%</td>
+                                            <td><span class="label label-sm label-danger">EXPIRADO</span></td>
+                                            <td>
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><span><a class="btn btn-default btn-xs" title="Editar"
+                                                                        href="javascript:bandejaActividades.popupCorte({&quot;IDGESTION&quot;:3,&quot;IDACTIVIDAD&quot;:57,&quot;TXACTIVIDAD&quot;:&quot;DESPLIEGUE DE COORDINADORES DE ACCIONES EDUCATIVAS&quot;,&quot;IDPROCESO&quot;:84,&quot;FECHAINICIO&quot;:&quot;01/05/2018&quot;,&quot;FECHAFINAL&quot;:&quot;07/10/2018&quot;,&quot;FGACTIVO&quot;:1,&quot;FGESTADO&quot;:3,&quot;PORCENTAJE&quot;:0,&quot;IDTIPO&quot;:2,&quot;ESTADO&quot;:&quot;EXPIRADO&quot;})"><i
+                                                                            class="fa fa-pencil-square-o" aria-hidden="true"></i></a></span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr role="row" class="even">
+                                            <td>EJECUCIÓN DE ACCIONES EDUCATIVAS PARA PROMOVER LA EDUCACIÓN Y
+                                                FORMACIÓN CIUDADANA PARA LA EMISIÓN DE UN VOTO INFORMADO.</td>
+                                            <td>01/05/2018</td>
+                                            <td>07/10/2018</td>
+                                            <td>0%</td>
+                                            <td><span class="label label-sm label-danger">EXPIRADO</span></td>
+                                            <td>
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><span><a class="btn btn-default btn-xs" title="Visualizar"
+                                                                        href="javascript:bandejaActividades.verCorte({&quot;IDGESTION&quot;:3,&quot;IDACTIVIDAD&quot;:58,&quot;TXACTIVIDAD&quot;:&quot;EJECUCIÓN DE ACCIONES EDUCATIVAS PARA PROMOVER LA EDUCACIÓN Y FORMACIÓN CIUDADANA PARA LA EMISIÓN DE UN VOTO INFORMADO.&quot;,&quot;IDPROCESO&quot;:84,&quot;FECHAINICIO&quot;:&quot;01/05/2018&quot;,&quot;FECHAFINAL&quot;:&quot;07/10/2018&quot;,&quot;FGACTIVO&quot;:1,&quot;FGESTADO&quot;:3,&quot;PORCENTAJE&quot;:0,&quot;IDTIPO&quot;:3,&quot;ESTADO&quot;:&quot;EXPIRADO&quot;})"><i
+                                                                            class="glyphicon glyphicon-eye-open"
+                                                                            aria-hidden="true"></i></a></span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr role="row" class="odd">
+                                            <td>ASISTENCIA TÉCNICA Y FORTALECIMIENTO DE CAPACIDADES DE
+                                                ORGANIZACIONES POLÍTICAS</td>
+                                            <td>01/05/2018</td>
+                                            <td>30/06/2018</td>
+                                            <td>0%</td>
+                                            <td><span class="label label-sm label-danger">EXPIRADO</span></td>
+                                            <td>
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><span><a class="btn btn-default btn-xs" title="Visualizar"
+                                                                        href="javascript:bandejaActividades.verCorte({&quot;IDGESTION&quot;:3,&quot;IDACTIVIDAD&quot;:53,&quot;TXACTIVIDAD&quot;:&quot;ASISTENCIA TÉCNICA Y FORTALECIMIENTO DE CAPACIDADES DE ORGANIZACIONES POLÍTICAS&quot;,&quot;IDPROCESO&quot;:84,&quot;FECHAINICIO&quot;:&quot;01/05/2018&quot;,&quot;FECHAFINAL&quot;:&quot;30/06/2018&quot;,&quot;FGACTIVO&quot;:1,&quot;FGESTADO&quot;:3,&quot;PORCENTAJE&quot;:0,&quot;IDTIPO&quot;:3,&quot;ESTADO&quot;:&quot;EXPIRADO&quot;})"><i
+                                                                            class="glyphicon glyphicon-eye-open"
+                                                                            aria-hidden="true"></i></a></span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr role="row" class="even">
+                                            <td>ENVÍO DE INDUMENTARIA PARA TODO EL PERSONAL DE LOS JEE.</td>
+                                            <td>01/05/2018</td>
+                                            <td>30/06/2018</td>
+                                            <td>0%</td>
+                                            <td><span class="label label-sm label-danger">EXPIRADO</span></td>
+                                            <td>
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><span><a class="btn btn-default btn-xs" title="Editar"
+                                                                        href="javascript:bandejaActividades.popupCorte({&quot;IDGESTION&quot;:1,&quot;IDACTIVIDAD&quot;:10,&quot;TXACTIVIDAD&quot;:&quot;ENVÍO DE INDUMENTARIA PARA TODO EL PERSONAL DE LOS JEE.&quot;,&quot;IDPROCESO&quot;:84,&quot;FECHAINICIO&quot;:&quot;01/05/2018&quot;,&quot;FECHAFINAL&quot;:&quot;30/06/2018&quot;,&quot;FGACTIVO&quot;:1,&quot;FGESTADO&quot;:3,&quot;PORCENTAJE&quot;:0,&quot;IDTIPO&quot;:2,&quot;ESTADO&quot;:&quot;EXPIRADO&quot;})"><i
+                                                                            class="fa fa-pencil-square-o" aria-hidden="true"></i></a></span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr role="row" class="odd">
+                                            <td>FISCALIZACIÓN DEL MATERIAL EDUCATIVO A UTILIZARSE PARA LA
+                                                CAPACITACIÓN DE ACTORES ELECTORALES.</td>
+                                            <td>01/05/2018</td>
+                                            <td>30/06/2018</td>
+                                            <td>0%</td>
+                                            <td><span class="label label-sm label-danger">EXPIRADO</span></td>
+                                            <td>
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><span><a class="btn btn-default btn-xs" title="Editar"
+                                                                        href="javascript:bandejaActividades.popupCorte({&quot;IDGESTION&quot;:2,&quot;IDACTIVIDAD&quot;:20,&quot;TXACTIVIDAD&quot;:&quot;FISCALIZACIÓN DEL MATERIAL EDUCATIVO A UTILIZARSE PARA LA CAPACITACIÓN DE ACTORES ELECTORALES.&quot;,&quot;IDPROCESO&quot;:84,&quot;FECHAINICIO&quot;:&quot;01/05/2018&quot;,&quot;FECHAFINAL&quot;:&quot;30/06/2018&quot;,&quot;FGACTIVO&quot;:1,&quot;FGESTADO&quot;:3,&quot;PORCENTAJE&quot;:0,&quot;IDTIPO&quot;:2,&quot;ESTADO&quot;:&quot;EXPIRADO&quot;})"><i
+                                                                            class="fa fa-pencil-square-o" aria-hidden="true"></i></a></span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr role="row" class="even">
+                                            <td>GESTIONAR ENCARGOS INTERNOS DESIGNADOS A LOS ERS PARA
+                                                INSTALACIÓN DE LOS JEE.</td>
+                                            <td>01/05/2018</td>
+                                            <td>31/05/2018</td>
+                                            <td>0%</td>
+                                            <td><span class="label label-sm label-danger">EXPIRADO</span></td>
+                                            <td>
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><span><a class="btn btn-default btn-xs" title="Editar"
+                                                                        href="javascript:bandejaActividades.popupCorte({&quot;IDGESTION&quot;:1,&quot;IDACTIVIDAD&quot;:8,&quot;TXACTIVIDAD&quot;:&quot;GESTIONAR ENCARGOS INTERNOS DESIGNADOS A LOS ERS PARA INSTALACIÓN DE LOS JEE.&quot;,&quot;IDPROCESO&quot;:84,&quot;FECHAINICIO&quot;:&quot;01/05/2018&quot;,&quot;FECHAFINAL&quot;:&quot;31/05/2018&quot;,&quot;FGACTIVO&quot;:1,&quot;FGESTADO&quot;:3,&quot;PORCENTAJE&quot;:0,&quot;IDTIPO&quot;:2,&quot;ESTADO&quot;:&quot;EXPIRADO&quot;})"><i
+                                                                            class="fa fa-pencil-square-o" aria-hidden="true"></i></a></span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr role="row" class="odd">
+                                            <td>PROVEER DE FONDOS O ASIGNACIÓN DE ENCARGOS A EFECTOS DE CUMPLIR
+                                                FUNCIONES PUNTUALES POR EL PERIODO DE 15 DÍAS.</td>
+                                            <td>01/05/2018</td>
+                                            <td>31/05/2018</td>
+                                            <td>0%</td>
+                                            <td><span class="label label-sm label-danger">EXPIRADO</span></td>
+                                            <td>
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><span><a class="btn btn-default btn-xs" title="Editar"
+                                                                        href="javascript:bandejaActividades.popupCorte({&quot;IDGESTION&quot;:1,&quot;IDACTIVIDAD&quot;:7,&quot;TXACTIVIDAD&quot;:&quot;PROVEER DE FONDOS O ASIGNACIÓN DE ENCARGOS A EFECTOS DE CUMPLIR FUNCIONES PUNTUALES POR EL PERIODO DE 15 DÍAS.&quot;,&quot;IDPROCESO&quot;:84,&quot;FECHAINICIO&quot;:&quot;01/05/2018&quot;,&quot;FECHAFINAL&quot;:&quot;31/05/2018&quot;,&quot;FGACTIVO&quot;:1,&quot;FGESTADO&quot;:3,&quot;PORCENTAJE&quot;:0,&quot;IDTIPO&quot;:2,&quot;ESTADO&quot;:&quot;EXPIRADO&quot;})"><i
+                                                                            class="fa fa-pencil-square-o" aria-hidden="true"></i></a></span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr role="row" class="even">
+                                            <td>TALLERES EN FORMACIÓN POLÍTICO-ELECTORAL PARA LÍDERES Y
+                                                LIDERESAS SOCIALES</td>
+                                            <td>01/05/2018</td>
+                                            <td>31/05/2018</td>
+                                            <td>0%</td>
+                                            <td><span class="label label-sm label-danger">EXPIRADO</span></td>
+                                            <td>
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><span><a class="btn btn-default btn-xs" title="Visualizar"
+                                                                        href="javascript:bandejaActividades.verCorte({&quot;IDGESTION&quot;:3,&quot;IDACTIVIDAD&quot;:54,&quot;TXACTIVIDAD&quot;:&quot;TALLERES EN FORMACIÓN POLÍTICO-ELECTORAL PARA LÍDERES Y LIDERESAS SOCIALES&quot;,&quot;IDPROCESO&quot;:84,&quot;FECHAINICIO&quot;:&quot;01/05/2018&quot;,&quot;FECHAFINAL&quot;:&quot;31/05/2018&quot;,&quot;FGACTIVO&quot;:1,&quot;FGESTADO&quot;:3,&quot;PORCENTAJE&quot;:0,&quot;IDTIPO&quot;:3,&quot;ESTADO&quot;:&quot;EXPIRADO&quot;})"><i
+                                                                            class="glyphicon glyphicon-eye-open"
+                                                                            aria-hidden="true"></i></a></span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-5">
+                                <div class="dataTables_info" id="tablaActividad_info" role="status" aria-live="polite">Mostrando
+                                    1 al 20 de 67 registros</div>
+                            </div>
+                            <div class="col-sm-7">
+                                <div class="dataTables_paginate paging_simple_numbers" id="tablaActividad_paginate">
+                                    <ul class="pagination">
+                                        <li class="paginate_button previous disabled" id="tablaActividad_previous"><a
+                                                href="http://localhost:52578/Actividad/Index#" aria-controls="tablaActividad"
+                                                data-dt-idx="0" tabindex="0"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+                                        <li class="paginate_button active"><a href="http://localhost:52578/Actividad/Index#"
+                                                aria-controls="tablaActividad" data-dt-idx="1" tabindex="0">1</a></li>
+                                        <li class="paginate_button "><a href="http://localhost:52578/Actividad/Index#"
+                                                aria-controls="tablaActividad" data-dt-idx="2" tabindex="0">2</a></li>
+                                        <li class="paginate_button "><a href="http://localhost:52578/Actividad/Index#"
+                                                aria-controls="tablaActividad" data-dt-idx="3" tabindex="0">3</a></li>
+                                        <li class="paginate_button "><a href="http://localhost:52578/Actividad/Index#"
+                                                aria-controls="tablaActividad" data-dt-idx="4" tabindex="0">4</a></li>
+                                        <li class="paginate_button next" id="tablaActividad_next"><a href="http://localhost:52578/Actividad/Index#"
+                                                aria-controls="tablaActividad" data-dt-idx="5" tabindex="0"><i class="fa fa-angle-right"
+                                                    aria-hidden="true"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="modal-cortelista" tabindex="-1" role="dialog" aria-labelledby="titleModal" aria-hidden="true"
+        data-keyboard="false" data-backdrop="static">
+        <!-- Modal dialog -->
+        <div class="modal-dialog  modal-lg" role="document">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <!-- Modal content header -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <h4 class="modal-title"><label id="titulocorte">NOTIFICAR RESOLUCIONES APROBADAS.</label></h4>
+                </div>
+                <!-- Modal content body -->
+                <div class="modal-body">
+                    <div class="table-responsive">
+                        <div id="tablaCorteActividad_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                            <div class="row">
+                                <div class="col-sm-6"></div>
+                                <div class="col-sm-6"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <table id="tablaCorteActividad" class="table table-hover table-condensed table-striped table-bordered dataTable no-footer"
+                                        width="100%" role="grid" aria-describedby="tablaCorteActividad_info" style="width: 100%;">
+                                        <thead>
+                                            <tr role="row">
+                                                <th style="text-align: center; width: 34px;" class="sorting_disabled"
+                                                    rowspan="1" colspan="1">N° Corte</th>
+                                                <th style="text-align: center; width: 64px;" class="sorting_disabled"
+                                                    rowspan="1" colspan="1">Fecha Corte</th>
+                                                <th style="text-align: center; width: 64px;" class="sorting_disabled"
+                                                    rowspan="1" colspan="1">Fecha Reporte</th>
+                                                <th style="text-align: center; width: 246px;" class="sorting_disabled"
+                                                    rowspan="1" colspan="1">Descripción</th>
+                                                <th style="text-align: center; width: 65px;" class="sorting_disabled"
+                                                    rowspan="1" colspan="1">Estado</th>
+                                                <th style="text-align: center; width: 157px;" class="sorting_disabled"
+                                                    rowspan="1" colspan="1">Archivo</th>
+                                                <th style="text-align: center; width: 66px;" class="sorting_disabled"
+                                                    rowspan="1" colspan="1">Acciones</th>
+                                            </tr>
+
+                                        </thead>
+                                        <tbody>
+                                            <tr class="odd">
+                                                <td valign="top" colspan="7" class="dataTables_empty">Sin datos</td>
+                                            </tr>
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <div class="dataTables_info" id="tablaCorteActividad_info" role="status" aria-live="polite">Mostrando
+                                        0 al 0 registros</div>
+                                </div>
+                                <div class="col-sm-7">
+                                    <div class="dataTables_paginate paging_simple_numbers" id="tablaCorteActividad_paginate">
+                                        <ul class="pagination">
+                                            <li class="paginate_button previous disabled" id="tablaCorteActividad_previous"><a
+                                                    href="http://localhost:52578/Actividad/Index#" aria-controls="tablaCorteActividad"
+                                                    data-dt-idx="0" tabindex="0"><i class="fa fa-angle-left"
+                                                        aria-hidden="true"></i></a></li>
+                                            <li class="paginate_button next disabled" id="tablaCorteActividad_next"><a
+                                                    href="http://localhost:52578/Actividad/Index#" aria-controls="tablaCorteActividad"
+                                                    data-dt-idx="1" tabindex="0"><i class="fa fa-angle-right"
+                                                        aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Modal content footer -->
+                <div class="modal-footer">
+                    <button class="btn btn-default btn-sm pull-left" type="button" data-dismiss="modal">Cerrar</button>
+                    <button class="btn btn-primary btn-sm" type="button" id="btnAgregarCorte">Nuevo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="modal-corteactualizar" tabindex="-1" role="dialog" aria-labelledby="titleModal"
+        aria-hidden="true" data-keyboard="false" data-backdrop="static">
+        <!-- Modal dialog -->
+        <div class="modal-dialog modal-lg" role="document">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <!-- Modal content header -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+
+                    <h4 class="modal-title"><label id="titulocorteactualizar">NOTIFICAR RESOLUCIONES APROBADAS.</label></h4>
+                </div>
+                <!-- Modal content body -->
+                <div class="modal-body">
+                    <form id="formConsultaConvenios">
+                        <div class="row container-fluid">
+                            <div class="col-md-2 col-sm-12">
+
+                                <div class="form-group">
+
+                                    <label for="lblcorte">Fecha Corte</label>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-12">
+                                <div class="form-group">
+
+                                    <select class="form-control select2 input-sm select2-hidden-accessible" style="width:100%;"
+                                        id="cmbIdCorte" tabindex="-1" aria-hidden="true">
+                                        <option value="">&lt;&lt;--Seleccione--&gt;&gt;</option>
+                                        <option value="1">17/02/2018</option>
+                                    </select><span class="select2 select2-container select2-container--default" dir="ltr"
+                                        style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single"
+                                                role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0"
+                                                aria-labelledby="select2-cmbIdCorte-container"><span class="select2-selection__rendered"
+                                                    id="select2-cmbIdCorte-container"><span class="select2-selection__placeholder">Seleccionar</span></span><span
+                                                    class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span
+                                            class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row container-fluid">
+                            <div class="col-md-2 col-sm-12">
+
+                                <div class="form-group">
+
+                                    <label for="cmbestado">Fecha Reporte</label>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-12">
+                                <div class="input-group date">
+                                    <input type="text" class="form-control input-sm" id="txtFechaCorte">
+                                    <span class="input-group-addon input-sm" id="abrirFecha">
+                                        <i class="fa fa-calendar"></i>
+
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-12">
+
+                                <div class="form-group pull-right">
+
+                                    <label for="cmbestado">Estado</label>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-12">
+
+                                <div class="form-group">
+
+                                    <select class="form-control select2 input-sm select2-hidden-accessible" style="width:100%;"
+                                        id="CodEstadoCorte" tabindex="-1" aria-hidden="true">
+                                        <option value="">&lt;&lt;--Seleccione--&gt;&gt;</option>
+                                        <option value="1">POR VALIDAR</option>
+                                        <option value="2">VALIDADO</option>
+                                    </select><span class="select2 select2-container select2-container--default" dir="ltr"
+                                        style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single"
+                                                role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0"
+                                                aria-labelledby="select2-CodEstadoCorte-container"><span class="select2-selection__rendered"
+                                                    id="select2-CodEstadoCorte-container"><span class="select2-selection__placeholder">Seleccionar</span></span><span
+                                                    class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span
+                                            class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row container-fluid">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <label for="lblvigencia">Descripción</label>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12">
+
+                                <textarea class="form-control input-sm" id="txtAsuntoCorte" rows="3" maxlength="250"></textarea>
+                                <div class="form-group pull-left">
+                                    <label for="cmbestadoXML">Numero caracteres maximo 250</label>
+                                </div>
+                            </div>
+
+                        </div>
+                        <br>
+                        <div class="row container-fluid">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <label for="lblvigencia">Adjuntar</label>
+
+
+
+
+                                        <div>
+
+
+                                            <label class="file-upload btn btn-success">
+
+                                                Elegir Archivo
+                                                <input id="fileArchivo" name="fileArchivo" type="file" class="file-input"
+                                                    multiple="">
+                                            </label>
+                                            <label id="label">Archivo adjunto no debe superar los 5MB</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="row container-fluid">
+                            <div class="col-sm-12">
+
+                                <div class="content_archivo_adjunto" id="divcontent_archivo_adjunto">
+
+                                    <table id="tblListaUpload" class="table table-hover table-condensed table-striped table-bordered">
+                                        <tbody></tbody>
+                                    </table>
+
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default btn-sm pull-left" type="button" data-dismiss="modal" id="btnCerrarCorte">Cerrar</button>
+
+                    <button class="btn btn-primary btn-sm" type="button" id="btnGuardarCorte">Grabar</button>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal fade" id="modal-corteListaXML" tabindex="-1" role="dialog" aria-labelledby="titleModal"
+        aria-hidden="true" data-keyboard="false" data-backdrop="static">
+        <!-- Modal dialog -->
+        <div class="modal-dialog  modal-lg" role="document">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <!-- Modal content header -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <h4 class="modal-title"><label id="titulocortelistaxml"></label></h4>
+                </div>
+                <!-- Modal content body -->
+                <div class="modal-body">
+                    <div class="table-responsive">
+                        <table id="tablaCorteActividadVer" class="table table-hover table-condensed table-striped table-bordered"
+                            width="100%">
+                            <thead>
+                                <tr>
+                                    <th style="text-align: center; width:10%">N° Corte</th>
+
+                                    <th style="text-align: center; width:20%">Fecha Corte</th>
+                                    <th style="text-align: center; width:20%">Fecha Reporte</th>
+                                    <th style="text-align: center; width:30%">Descripción</th>
+                                    <th style="text-align: center; width:10%">Estado</th>
+                                    <th style="text-align: center; width:10%">Acciones</th>
+
+
+                                </tr>
+
+                            </thead>
+                            <tbody></tbody>
+
+                        </table>
+
+                    </div>
+                </div>
+                <!-- Modal content footer -->
+                <div class="modal-footer">
+                    <button class="btn btn-default btn-sm pull-left" type="button" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="modal-VerXML" class="container-fluid" style="margin-right: 15px; display: none;">
+        <input type="hidden" id="hdnIdIdDetalle">
+
+        <h4 class="modal-title"><label id="titulocortelistaxmlDetalle"></label></h4>
+        <div class="box-inner">
+            <div class="row container-fluid">
+
+                <div class="box-header well" data-original-title="">
+                    <button class="btn btn-default btn-sm pull-left" type="button" id="btnRetornar" data-dismiss="modal">Retornar</button>
+                    <button class="btn btn-primary btn-sm" type="button" id="btnExportar" data-dismiss="modal">Excel</button>
+                </div>
+
+            </div>
+            <div class="box-content">
+                <div class="table-responsive">
+                    <table id="tblListaXML" class="table table-hover table-condensed table-striped table-bordered">
+                        <thead></thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal-visualizar">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="PopUp_Adjunto">
+                    <div class="iframe-panel">
+                        <div class="iframe-body">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal-corteactualizarXML" tabindex="-1" role="dialog" aria-labelledby="titleModal"
+        aria-hidden="true" data-keyboard="false" data-backdrop="static">
+        <!-- Modal dialog -->
+        <div class="modal-dialog modal-lg" role="document">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <!-- Modal content header -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+
+                    <h4 class="modal-title"><label id="titulocorteactualizarXML"></label></h4>
+                </div>
+                <!-- Modal content body -->
+                <div class="modal-body">
+                    <form id="formConsulta">
+                        <div class="row container-fluid">
+                            <div class="col-md-2 col-sm-12">
+
+                                <div class="form-group">
+
+                                    <label for="lblcorte">Fecha Corte</label>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-12">
+                                <div class="form-group">
+
+
+                                    <input type="text" class="form-control input-sm" id="cmbIdCorteXML">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row container-fluid">
+
+                            <div class="col-md-2 col-sm-12">
+                                <div class="form-group pull-left">
+                                    <label for="cmbestadoXML">Estado</label>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-12">
+                                <div class="form-group">
+                                    <select class="form-control select2 input-sm select2-hidden-accessible" style="width:100%;"
+                                        id="CodEstadoCorteXML" tabindex="-1" aria-hidden="true">
+                                        <option value="">&lt;&lt;--Seleccione--&gt;&gt;</option>
+                                        <option value="">&lt;&lt;--Seleccione--&gt;&gt;</option>
+                                        <option value="1">POR VALIDAR</option>
+                                        <option value="2">VALIDADO</option>
+                                    </select><span class="select2 select2-container select2-container--default" dir="ltr"
+                                        style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single"
+                                                role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0"
+                                                aria-labelledby="select2-CodEstadoCorteXML-container"><span class="select2-selection__rendered"
+                                                    id="select2-CodEstadoCorteXML-container"><span class="select2-selection__placeholder">Seleccionar</span></span><span
+                                                    class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span
+                                            class="dropdown-wrapper" aria-hidden="true"></span></span>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row container-fluid">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <label for="lblvigencia">Descripción</label>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <textarea class="form-control input-sm" id="txtAsuntoCorteXML" rows="3" maxlength="250"></textarea>
+                                <div class="form-group pull-left">
+                                    <label for="cmbestadoXML">Numero caracteres maximo 250</label>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default btn-sm pull-left" type="button" data-dismiss="modal" id="btnCerrarCorteXML">Cerrar</button>
+                    <button class="btn btn-primary btn-sm" type="button" id="btnGuardarCorteXML">Grabar</button>
+                    <button class="btn btn-primary btn-sm" type="button" id="btnProcesarCorteXML">Procesar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+</div>

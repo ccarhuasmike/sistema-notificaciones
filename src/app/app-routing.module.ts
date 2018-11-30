@@ -6,8 +6,8 @@ import { NotFoundComponent } from "../app/view/not-found/not-found.component";
 const routes: Routes = [
   {
     path: '',
-    // loadChildren: '../app/view/home/home.module#HomeModule'
-    component: NotFoundComponent
+    loadChildren: '../app/view/home/home.module#HomeModule'
+    //component: NotFoundComponent
   },
   {
     path: 'not-found',
