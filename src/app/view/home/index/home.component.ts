@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-
+import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/core';
+import { ModalDirective } from 'ngx-bootstrap';
 @Component({
   selector: 'app-home',
   templateUrl: "./home.component.html",
@@ -8,8 +8,13 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  public title = 'autobot';
-
+  public title = 'Home';
+  @ViewChild('childModalcortelista') public childModalcortelista: ModalDirective;
+  @ViewChild('childModalcorteactualizar') public childModalcorteactualizar: ModalDirective;
+  @ViewChild('childModalcorteListaXML') public childModalcorteListaXML: ModalDirective;
+  @ViewChild('childModalVerXML') public childModalVerXML: ModalDirective;
+  @ViewChild('childModalvisualizar') public childModalvisualizar: ModalDirective;
+  @ViewChild('childModalcorteactualizarXML2') public childModalcorteactualizarXML2: ModalDirective;
 
 
   constructor() { }
@@ -18,6 +23,49 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
 
   }
+  showcortelista() {
+    this.childModalcortelista.show();
+  }
+  hidecortelista() {
+    this.childModalcortelista.hide();
+  }
+
+  showcorteactualizar() {
+    this.childModalcorteactualizar.show();
+  }
+  hidecorteactualizar() {
+    this.childModalcorteactualizar.hide();
+  }
+
+  showcorteListaXML() {
+    this.childModalcorteListaXML.show();
+  }
+  hidecorteListaXML() {
+    this.childModalcorteListaXML.hide();
+  }
+  showcorteVerXML() {
+    this.childModalVerXML.show();
+  }
+  hidecorteVerXML() {
+    this.childModalVerXML.hide();
+  }
+
+  showvisualizar() {
+    this.childModalvisualizar.show();
+  }
+  hidevisualizar() {
+    this.childModalvisualizar.hide();
+  }
+
+  showcorteactualizarXML2() {
+    this.childModalcorteactualizarXML2.show();
+  }
+  hidecorteactualizarXML2() {
+    this.childModalcorteactualizarXML2.hide();
+  }
+
+
+
 
 
 }

@@ -2,13 +2,13 @@
     <div class="container">
         <div>
             <ul class="nav navbar-nav">
-                <li><a href="http://localhost:52578/">Inicio</a></li>
-                <li><a href="http://localhost:52578/Home/About">Acerca de</a></li>
-                <li><a href="http://localhost:52578/Home/Contact">Contacto</a></li>
+                <li><a [routerLink]="['/']" [routerLinkActive]="['active']">Inicio</a></li>
+                <li><a [routerLink]="['/']" [routerLinkActive]="['active']">Acerca de</a></li>
+                <li><a [routerLink]="['/']" [routerLinkActive]="['active']">Contacto</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="http://localhost:52578/Account/Register" id="registerLink">Registrarse</a></li>
-                <li><a href="http://localhost:52578/Account/Login" id="loginLink">Iniciar sesión</a></li>
+                <li><a [routerLink]="['/']" [routerLinkActive]="['active']" id="registerLink">Registrarse</a></li>
+                <li><a [routerLink]="['/']" [routerLinkActive]="['active']" id="loginLink">Iniciar sesión</a></li>
             </ul>
 
         </div>

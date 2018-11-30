@@ -4,8 +4,8 @@ import { Component, OnInit } from '@angular/core';
     selector: 'app-navigator',
     template: `
     <div class="ch-container">
-    <app-header ></app-header>    
-    <app-main></app-main>  
+        <app-header ></app-header>    
+        <app-main></app-main>  
     </div>  
   `,
     styles: []

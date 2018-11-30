@@ -12,15 +12,12 @@
                 <form id="formConsultaConvenios">
                     <div class="row container-fluid">
                         <div class="col-md-2 col-sm-12">
-
                             <div class="form-group pull-right">
-
                                 <label for="cmbestado">Gestión</label>
                             </div>
                         </div>
                         <div class="col-md-2 col-sm-12">
                             <div class="form-group">
-
                                 <select class="form-control select2 input-sm select2-hidden-accessible" style="width:100%;"
                                     id="cmbGestion" tabindex="-1" aria-hidden="true">
                                     <option value="-1">TODOS</option>
@@ -28,8 +25,9 @@
                                     <option value="2">FISCALIZADORA</option>
                                     <option value="3">EDUCACION</option>
                                     <option value="4">JURISIDICCIONAL</option>
-                                </select><span class="select2 select2-container select2-container--default" dir="ltr"
-                                    style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single"
+                                </select>
+                                <span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;"><span
+                                        class="selection"><span class="select2-selection select2-selection--single"
                                             role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0"
                                             aria-labelledby="select2-cmbGestion-container"><span class="select2-selection__rendered"
                                                 id="select2-cmbGestion-container" title="TODOS"><span class="select2-selection__clear">×</span>TODOS</span><span
@@ -38,24 +36,21 @@
                             </div>
                         </div>
                         <div class="col-md-2 col-sm-12">
-
                             <div class="form-group pull-right">
-
                                 <label for="cmbestado">Estado</label>
                             </div>
                         </div>
                         <div class="col-md-2 col-sm-12">
-
                             <div class="form-group">
-
                                 <select class="form-control select2 input-sm select2-hidden-accessible" style="width:100%;"
                                     id="cmbEstado" tabindex="-1" aria-hidden="true">
                                     <option value="-1">TODOS</option>
                                     <option value="1">EN PROCESO</option>
                                     <option value="2">CONCLUIDO</option>
                                     <option value="3">EXPIRADO</option>
-                                </select><span class="select2 select2-container select2-container--default" dir="ltr"
-                                    style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single"
+                                </select>
+                                <span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;"><span
+                                        class="selection"><span class="select2-selection select2-selection--single"
                                             role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0"
                                             aria-labelledby="select2-cmbEstado-container"><span class="select2-selection__rendered"
                                                 id="select2-cmbEstado-container" title="TODOS"><span class="select2-selection__clear">×</span>TODOS</span><span
@@ -65,15 +60,19 @@
                         </div>
                         <div class="col-md-1 col-sm-12">
                             <div class="form-group">
-
                                 <div>
                                     <button class="btn btn-primary btn-sm" type="button" id="btnBuscar">Buscar</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </form>
+                <button class="btn btn-primary btn-xs" (click)="showcortelista()">Resoluciones cortelista</button>
+                <button class="btn btn-primary btn-xs" (click)="showcorteactualizar()">Resoluciones corteactualizar</button>
+                <button class="btn btn-primary btn-xs" (click)="showcorteListaXML()">Resoluciones corteListaXML</button>
+                <button class="btn btn-primary btn-xs" (click)="showcorteVerXML()"> VerXML</button>
+                <button class="btn btn-primary btn-xs" (click)="showvisualizar()"> Visualizar</button>
+                <button class="btn btn-primary btn-xs" (click)="showcorteactualizarXML2()"> corteactualizar 2</button>
                 <div class="table-responsive">
                     <div id="tablaActividad_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
                         <div class="row">
@@ -93,7 +92,8 @@
                                             <th width="8%" class="sorting_disabled" rowspan="1" colspan="1" style="width: 116px;">Fecha<br>Inicio</th>
                                             <th width="8%" class="sorting_disabled" rowspan="1" colspan="1" style="width: 116px;">Fecha<br>Vencimiento</th>
                                             <th width="8%" class="sorting_disabled" rowspan="1" colspan="1" style="width: 116px;">%Avance<br>De
-                                                Ejecucion </th>
+                                                Ejecucion
+                                            </th>
                                             <th width="8%" class="sorting_disabled" rowspan="1" colspan="1" style="width: 114px;">Estado</th>
                                             <th width="8%" class="sorting_disabled" rowspan="1" colspan="1" style="width: 115px;">Acciones</th>
                                         </tr>
@@ -103,7 +103,8 @@
                                             <td>SUPERVISIÓN Y MONITOREO DE LA FISCALIZACIÓN ELECTORAL (DÁDIVAS,
                                                 PROPAGANDA ELECTORAL, PUBLICIDAD ESTATAL, NEUTRALIDAD DE
                                                 FUNCIONARIOS Y SERVIDORES PÚBLICOS, ENCUESTAS, GARANTÍAS,
-                                                ORGANIZACIÓN DEL PROCESO Y OTROS).</td>
+                                                ORGANIZACIÓN DEL PROCESO Y OTROS).
+                                            </td>
                                             <td>01/01/2018</td>
                                             <td>07/10/2018</td>
                                             <td>0%</td>
@@ -141,7 +142,8 @@
                                         </tr>
                                         <tr role="row" class="odd">
                                             <td>ACONDICIONAR, IMPLEMENTAR Y MANTENER LAS SEDES DEL JNE Y DE LOS
-                                                JEE.</td>
+                                                JEE.
+                                            </td>
                                             <td>01/01/2018</td>
                                             <td>31/10/2018</td>
                                             <td>0%</td>
@@ -160,7 +162,8 @@
                                         </tr>
                                         <tr role="row" class="even">
                                             <td>PUBLICAR RESOLUCIÓN CON LA DEFINICIÓN DE LAS CIRCUNSCRIPCIONES
-                                                ADMINISTRATIVAS ELECTORALES.</td>
+                                                ADMINISTRATIVAS ELECTORALES.
+                                            </td>
                                             <td>01/02/2018</td>
                                             <td>28/02/2018</td>
                                             <td>0%</td>
@@ -180,7 +183,8 @@
                                         <tr role="row" class="odd">
                                             <td>ELABORACIÓN DE DOCUMENTACIÓN (PROYECTOS DE REMESAS Y/O
                                                 RESOLUCIONES) A FIN DE ASIGNAR LOS RECURSOS NECESARIO A LOS
-                                                JEE.</td>
+                                                JEE.
+                                            </td>
                                             <td>01/02/2018</td>
                                             <td>31/10/2018</td>
                                             <td>0%</td>
@@ -217,7 +221,8 @@
                                         </tr>
                                         <tr role="row" class="odd">
                                             <td>EQUIPAMIENTO (MOBILIARIO Y EQUIPOS) PARA EL FUNCIONAMIENTO DE
-                                                LOS JEE.</td>
+                                                LOS JEE.
+                                            </td>
                                             <td>01/04/2018</td>
                                             <td>31/05/2018</td>
                                             <td>0%</td>
@@ -272,7 +277,8 @@
                                         </tr>
                                         <tr role="row" class="even">
                                             <td>GESTIONAR LA ASIGNACIÓN DE ENCARGOS INTERNOS PARA LA
-                                                HABILITACIÓN DE LOS LOCALES SEDES DE LOS JEE.</td>
+                                                HABILITACIÓN DE LOS LOCALES SEDES DE LOS JEE.
+                                            </td>
                                             <td>01/04/2018</td>
                                             <td>31/05/2018</td>
                                             <td>0%</td>
@@ -291,7 +297,8 @@
                                         </tr>
                                         <tr role="row" class="odd">
                                             <td>PUBLICACIÓN Y NOTIFICACIÓN DE LA RESOLUCIÓN DE CONFORMACIÓN
-                                                DEFINITIVA DE LOS JEE.</td>
+                                                DEFINITIVA DE LOS JEE.
+                                            </td>
                                             <td>01/04/2018</td>
                                             <td>31/05/2018</td>
                                             <td>0%</td>
@@ -310,7 +317,8 @@
                                         </tr>
                                         <tr role="row" class="even">
                                             <td>ACTUALIZAR LA BASE DE DATOS DEL DIRECTORIO DE CONFORMACIÓN DE
-                                                LOS JEE.</td>
+                                                LOS JEE.
+                                            </td>
                                             <td>01/05/2018</td>
                                             <td>07/10/2018</td>
                                             <td>0%</td>
@@ -348,7 +356,8 @@
                                         </tr>
                                         <tr role="row" class="even">
                                             <td>EJECUCIÓN DE ACCIONES EDUCATIVAS PARA PROMOVER LA EDUCACIÓN Y
-                                                FORMACIÓN CIUDADANA PARA LA EMISIÓN DE UN VOTO INFORMADO.</td>
+                                                FORMACIÓN CIUDADANA PARA LA EMISIÓN DE UN VOTO INFORMADO.
+                                            </td>
                                             <td>01/05/2018</td>
                                             <td>07/10/2018</td>
                                             <td>0%</td>
@@ -368,7 +377,8 @@
                                         </tr>
                                         <tr role="row" class="odd">
                                             <td>ASISTENCIA TÉCNICA Y FORTALECIMIENTO DE CAPACIDADES DE
-                                                ORGANIZACIONES POLÍTICAS</td>
+                                                ORGANIZACIONES POLÍTICAS
+                                            </td>
                                             <td>01/05/2018</td>
                                             <td>30/06/2018</td>
                                             <td>0%</td>
@@ -406,7 +416,8 @@
                                         </tr>
                                         <tr role="row" class="odd">
                                             <td>FISCALIZACIÓN DEL MATERIAL EDUCATIVO A UTILIZARSE PARA LA
-                                                CAPACITACIÓN DE ACTORES ELECTORALES.</td>
+                                                CAPACITACIÓN DE ACTORES ELECTORALES.
+                                            </td>
                                             <td>01/05/2018</td>
                                             <td>30/06/2018</td>
                                             <td>0%</td>
@@ -425,7 +436,8 @@
                                         </tr>
                                         <tr role="row" class="even">
                                             <td>GESTIONAR ENCARGOS INTERNOS DESIGNADOS A LOS ERS PARA
-                                                INSTALACIÓN DE LOS JEE.</td>
+                                                INSTALACIÓN DE LOS JEE.
+                                            </td>
                                             <td>01/05/2018</td>
                                             <td>31/05/2018</td>
                                             <td>0%</td>
@@ -444,7 +456,8 @@
                                         </tr>
                                         <tr role="row" class="odd">
                                             <td>PROVEER DE FONDOS O ASIGNACIÓN DE ENCARGOS A EFECTOS DE CUMPLIR
-                                                FUNCIONES PUNTUALES POR EL PERIODO DE 15 DÍAS.</td>
+                                                FUNCIONES PUNTUALES POR EL PERIODO DE 15 DÍAS.
+                                            </td>
                                             <td>01/05/2018</td>
                                             <td>31/05/2018</td>
                                             <td>0%</td>
@@ -463,7 +476,8 @@
                                         </tr>
                                         <tr role="row" class="even">
                                             <td>TALLERES EN FORMACIÓN POLÍTICO-ELECTORAL PARA LÍDERES Y
-                                                LIDERESAS SOCIALES</td>
+                                                LIDERESAS SOCIALES
+                                            </td>
                                             <td>01/05/2018</td>
                                             <td>31/05/2018</td>
                                             <td>0%</td>
@@ -488,7 +502,8 @@
                         <div class="row">
                             <div class="col-sm-5">
                                 <div class="dataTables_info" id="tablaActividad_info" role="status" aria-live="polite">Mostrando
-                                    1 al 20 de 67 registros</div>
+                                    1 al 20 de 67 registros
+                                </div>
                             </div>
                             <div class="col-sm-7">
                                 <div class="dataTables_paginate paging_simple_numbers" id="tablaActividad_paginate">
@@ -516,17 +531,15 @@
             </div>
         </div>
     </div>
-
-
-    <div class="modal fade" id="modal-cortelista" tabindex="-1" role="dialog" aria-labelledby="titleModal" aria-hidden="true"
-        data-keyboard="false" data-backdrop="static">
+    <div bsModal #childModalcortelista="bs-modal" class="modal fade" id="modal-cortelista" tabindex="-1" role="dialog"
+        aria-labelledby="titleModal" aria-hidden="true" data-keyboard="false" data-backdrop="static">
         <!-- Modal dialog -->
         <div class="modal-dialog  modal-lg" role="document">
             <!-- Modal content -->
             <div class="modal-content">
                 <!-- Modal content header -->
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="modal" (click)="hidecortelista()" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                     <h4 class="modal-title"><label id="titulocorte">NOTIFICAR RESOLUCIONES APROBADAS.</label></h4>
@@ -560,21 +573,20 @@
                                                 <th style="text-align: center; width: 66px;" class="sorting_disabled"
                                                     rowspan="1" colspan="1">Acciones</th>
                                             </tr>
-
                                         </thead>
                                         <tbody>
                                             <tr class="odd">
                                                 <td valign="top" colspan="7" class="dataTables_empty">Sin datos</td>
                                             </tr>
                                         </tbody>
-
                                     </table>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-sm-5">
                                     <div class="dataTables_info" id="tablaCorteActividad_info" role="status" aria-live="polite">Mostrando
-                                        0 al 0 registros</div>
+                                        0 al 0 registros
+                                    </div>
                                 </div>
                                 <div class="col-sm-7">
                                     <div class="dataTables_paginate paging_simple_numbers" id="tablaCorteActividad_paginate">
@@ -592,7 +604,6 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
                 <!-- Modal content footer -->
@@ -603,20 +614,17 @@
             </div>
         </div>
     </div>
-
-
-    <div class="modal fade" id="modal-corteactualizar" tabindex="-1" role="dialog" aria-labelledby="titleModal"
-        aria-hidden="true" data-keyboard="false" data-backdrop="static">
+    <div bsModal #childModalcorteactualizar="bs-modal" class="modal fade" id="modal-corteactualizar" tabindex="-1" role="dialog"
+        aria-labelledby="titleModal" aria-hidden="true" data-keyboard="false" data-backdrop="static">
         <!-- Modal dialog -->
         <div class="modal-dialog modal-lg" role="document">
             <!-- Modal content -->
             <div class="modal-content">
                 <!-- Modal content header -->
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="modal" (click)="hidecorteactualizar()" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
-
                     <h4 class="modal-title"><label id="titulocorteactualizar">NOTIFICAR RESOLUCIONES APROBADAS.</label></h4>
                 </div>
                 <!-- Modal content body -->
@@ -624,21 +632,19 @@
                     <form id="formConsultaConvenios">
                         <div class="row container-fluid">
                             <div class="col-md-2 col-sm-12">
-
                                 <div class="form-group">
-
                                     <label for="lblcorte">Fecha Corte</label>
                                 </div>
                             </div>
                             <div class="col-md-2 col-sm-12">
                                 <div class="form-group">
-
                                     <select class="form-control select2 input-sm select2-hidden-accessible" style="width:100%;"
                                         id="cmbIdCorte" tabindex="-1" aria-hidden="true">
                                         <option value="">&lt;&lt;--Seleccione--&gt;&gt;</option>
                                         <option value="1">17/02/2018</option>
-                                    </select><span class="select2 select2-container select2-container--default" dir="ltr"
-                                        style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single"
+                                    </select>
+                                    <span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;"><span
+                                            class="selection"><span class="select2-selection select2-selection--single"
                                                 role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0"
                                                 aria-labelledby="select2-cmbIdCorte-container"><span class="select2-selection__rendered"
                                                     id="select2-cmbIdCorte-container"><span class="select2-selection__placeholder">Seleccionar</span></span><span
@@ -646,14 +652,10 @@
                                             class="dropdown-wrapper" aria-hidden="true"></span></span>
                                 </div>
                             </div>
-
                         </div>
-
                         <div class="row container-fluid">
                             <div class="col-md-2 col-sm-12">
-
                                 <div class="form-group">
-
                                     <label for="cmbestado">Fecha Reporte</label>
                                 </div>
                             </div>
@@ -662,28 +664,24 @@
                                     <input type="text" class="form-control input-sm" id="txtFechaCorte">
                                     <span class="input-group-addon input-sm" id="abrirFecha">
                                         <i class="fa fa-calendar"></i>
-
                                     </span>
                                 </div>
                             </div>
                             <div class="col-md-2 col-sm-12">
-
                                 <div class="form-group pull-right">
-
                                     <label for="cmbestado">Estado</label>
                                 </div>
                             </div>
                             <div class="col-md-2 col-sm-12">
-
                                 <div class="form-group">
-
                                     <select class="form-control select2 input-sm select2-hidden-accessible" style="width:100%;"
                                         id="CodEstadoCorte" tabindex="-1" aria-hidden="true">
                                         <option value="">&lt;&lt;--Seleccione--&gt;&gt;</option>
                                         <option value="1">POR VALIDAR</option>
                                         <option value="2">VALIDADO</option>
-                                    </select><span class="select2 select2-container select2-container--default" dir="ltr"
-                                        style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single"
+                                    </select>
+                                    <span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;"><span
+                                            class="selection"><span class="select2-selection select2-selection--single"
                                                 role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0"
                                                 aria-labelledby="select2-CodEstadoCorte-container"><span class="select2-selection__rendered"
                                                     id="select2-CodEstadoCorte-container"><span class="select2-selection__placeholder">Seleccionar</span></span><span
@@ -691,27 +689,21 @@
                                             class="dropdown-wrapper" aria-hidden="true"></span></span>
                                 </div>
                             </div>
-
                         </div>
-
                         <div class="row container-fluid">
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <div class="input-group">
                                         <label for="lblvigencia">Descripción</label>
-
                                     </div>
                                 </div>
                             </div>
-
                             <div class="col-sm-12">
-
                                 <textarea class="form-control input-sm" id="txtAsuntoCorte" rows="3" maxlength="250"></textarea>
                                 <div class="form-group pull-left">
                                     <label for="cmbestadoXML">Numero caracteres maximo 250</label>
                                 </div>
                             </div>
-
                         </div>
                         <br>
                         <div class="row container-fluid">
@@ -719,15 +711,8 @@
                                 <div class="form-group">
                                     <div class="input-group">
                                         <label for="lblvigencia">Adjuntar</label>
-
-
-
-
                                         <div>
-
-
                                             <label class="file-upload btn btn-success">
-
                                                 Elegir Archivo
                                                 <input id="fileArchivo" name="fileArchivo" type="file" class="file-input"
                                                     multiple="">
@@ -737,53 +722,34 @@
                                     </div>
                                 </div>
                             </div>
-
-
                         </div>
-
-
                         <div class="row container-fluid">
                             <div class="col-sm-12">
-
                                 <div class="content_archivo_adjunto" id="divcontent_archivo_adjunto">
-
                                     <table id="tblListaUpload" class="table table-hover table-condensed table-striped table-bordered">
                                         <tbody></tbody>
                                     </table>
-
                                 </div>
-
-
                             </div>
-
-
                         </div>
-
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-default btn-sm pull-left" type="button" data-dismiss="modal" id="btnCerrarCorte">Cerrar</button>
-
                     <button class="btn btn-primary btn-sm" type="button" id="btnGuardarCorte">Grabar</button>
                 </div>
-
-
-
             </div>
         </div>
     </div>
-
-
-
-    <div class="modal fade" id="modal-corteListaXML" tabindex="-1" role="dialog" aria-labelledby="titleModal"
-        aria-hidden="true" data-keyboard="false" data-backdrop="static">
+    <div bsModal #childModalcorteListaXML="bs-modal" class="modal fade" id="modal-corteListaXML" tabindex="-1" role="dialog"
+        aria-labelledby="titleModal" aria-hidden="true" data-keyboard="false" data-backdrop="static">
         <!-- Modal dialog -->
         <div class="modal-dialog  modal-lg" role="document">
             <!-- Modal content -->
             <div class="modal-content">
                 <!-- Modal content header -->
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" (click)="hidecorteListaXML()" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                     <h4 class="modal-title"><label id="titulocortelistaxml"></label></h4>
@@ -796,21 +762,15 @@
                             <thead>
                                 <tr>
                                     <th style="text-align: center; width:10%">N° Corte</th>
-
                                     <th style="text-align: center; width:20%">Fecha Corte</th>
                                     <th style="text-align: center; width:20%">Fecha Reporte</th>
                                     <th style="text-align: center; width:30%">Descripción</th>
                                     <th style="text-align: center; width:10%">Estado</th>
                                     <th style="text-align: center; width:10%">Acciones</th>
-
-
                                 </tr>
-
                             </thead>
                             <tbody></tbody>
-
                         </table>
-
                     </div>
                 </div>
                 <!-- Modal content footer -->
@@ -820,20 +780,16 @@
             </div>
         </div>
     </div>
+    <div bsModal #childModalVerXML="bs-modal" id="modal-VerXML" class="container-fluid">
 
-
-    <div id="modal-VerXML" class="container-fluid" style="margin-right: 15px; display: none;">
         <input type="hidden" id="hdnIdIdDetalle">
-
         <h4 class="modal-title"><label id="titulocortelistaxmlDetalle"></label></h4>
         <div class="box-inner">
             <div class="row container-fluid">
-
                 <div class="box-header well" data-original-title="">
                     <button class="btn btn-default btn-sm pull-left" type="button" id="btnRetornar" data-dismiss="modal">Retornar</button>
                     <button class="btn btn-primary btn-sm" type="button" id="btnExportar" data-dismiss="modal">Excel</button>
                 </div>
-
             </div>
             <div class="box-content">
                 <div class="table-responsive">
@@ -845,12 +801,11 @@
             </div>
         </div>
     </div>
-
-    <div class="modal fade" id="modal-visualizar">
+    <div bsModal #childModalvisualizar="bs-modal" class="modal fade" id="modal-visualizar">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" (click)="hidevisualizar()" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
@@ -863,19 +818,18 @@
             </div>
         </div>
     </div>
-
-    <div class="modal fade" id="modal-corteactualizarXML" tabindex="-1" role="dialog" aria-labelledby="titleModal"
-        aria-hidden="true" data-keyboard="false" data-backdrop="static">
+    <div bsModal #childModalcorteactualizarXML2="bs-modal" class="modal fade" id="modal-corteactualizarXML" tabindex="-1"
+        role="dialog" aria-labelledby="titleModal" aria-hidden="true" data-keyboard="false" data-backdrop="static">
         <!-- Modal dialog -->
         <div class="modal-dialog modal-lg" role="document">
             <!-- Modal content -->
             <div class="modal-content">
                 <!-- Modal content header -->
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" (click)="hidecorteactualizarXML2()" data-dismiss="modal"
+                        aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
-
                     <h4 class="modal-title"><label id="titulocorteactualizarXML"></label></h4>
                 </div>
                 <!-- Modal content body -->
@@ -883,24 +837,17 @@
                     <form id="formConsulta">
                         <div class="row container-fluid">
                             <div class="col-md-2 col-sm-12">
-
                                 <div class="form-group">
-
                                     <label for="lblcorte">Fecha Corte</label>
                                 </div>
                             </div>
                             <div class="col-md-2 col-sm-12">
                                 <div class="form-group">
-
-
                                     <input type="text" class="form-control input-sm" id="cmbIdCorteXML">
                                 </div>
                             </div>
-
                         </div>
-
                         <div class="row container-fluid">
-
                             <div class="col-md-2 col-sm-12">
                                 <div class="form-group pull-left">
                                     <label for="cmbestadoXML">Estado</label>
@@ -914,14 +861,14 @@
                                         <option value="">&lt;&lt;--Seleccione--&gt;&gt;</option>
                                         <option value="1">POR VALIDAR</option>
                                         <option value="2">VALIDADO</option>
-                                    </select><span class="select2 select2-container select2-container--default" dir="ltr"
-                                        style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single"
+                                    </select>
+                                    <span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;"><span
+                                            class="selection"><span class="select2-selection select2-selection--single"
                                                 role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0"
                                                 aria-labelledby="select2-CodEstadoCorteXML-container"><span class="select2-selection__rendered"
                                                     id="select2-CodEstadoCorteXML-container"><span class="select2-selection__placeholder">Seleccionar</span></span><span
                                                     class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span
                                             class="dropdown-wrapper" aria-hidden="true"></span></span>
-
                                 </div>
                             </div>
                         </div>
@@ -930,9 +877,7 @@
                                 <div class="form-group">
                                     <div class="input-group">
                                         <label for="lblvigencia">Descripción</label>
-
                                     </div>
-
                                 </div>
                             </div>
                             <div class="col-sm-12">
@@ -953,6 +898,32 @@
             </div>
         </div>
     </div>
-    <br>
-    <br>
+    <div class="modal fade" id="modalMessage" tabindex="-1" role="dialog" aria-labelledby="titleModalMessage"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document" id="dialogModalMessage">
+            <div class="modal-content">
+                <div class="modal-header" id="headerModalMessage">
+                    <button type="button" class="close" aria-label="Close" data-dismiss="modal">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <h4 class="modal-title" id="titleModalMessage"></h4>
+                </div>
+                <div class="modal-body" id="bodyModalMessage">
+                </div>
+                <div class="modal-footer" id="footerModalMessage">
+                    <button type="button" class="btn btn-outline btn-sm pull-left" data-dismiss="modal" id="btnCancelModalMessage"></button>
+                    <button type="button" class="btn btn-outline btn-sm" data-dismiss="modal" id="btnAcceptModalMessage"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Loading -->
+    <div class="modal fade" id="modalLoading" tabindex="-2" role="dialog" aria-labelledby="titleModalLoading"
+        aria-hidden="true" style="display: none;">
+        <div class="app-loading" role="document">
+            <i class="fa fa-refresh fa-spin fa-3x fa-fw" aria-hidden="true"></i>
+            <h4 id="messageLoading">Procesando, por favor espere...</h4>
+        </div>
+    </div>
+
 </div>
